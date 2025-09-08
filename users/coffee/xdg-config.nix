@@ -1,4 +1,4 @@
-{pkgs, home, ...}: {
+{pkgs, config, ...}: {
   xdg.autostart = {
     enable = true;
     entries = [
@@ -8,15 +8,16 @@
   };
   
   xdg.userDirs = {
+    createDirectories = true;
     enable = true;
-    desktop = "${home.homeDirectory}/userdata/desktop";
-    documents = "${home.homeDirectory}/userdata/documents";
-    download  = "${home.homeDirectory}/userdata/download";
-    pictures  = "${home.homeDirectory}/userdata/pictures";
-    videos    = "${home.homeDirectory}/userdata/videos";
-    templates = "${home.homeDirectory}/userdata/templates";
-    publicShare = "${home.homeDirectory}/userdata/public";
-    music     = "${home.homeDirectory}/userdata/music";
+    desktop = "${config.home.homeDirectory}/userdata/desktop";
+    documents = "${config.home.homeDirectory}/userdata/documents";
+    download  = "${config.home.homeDirectory}/userdata/download";
+    pictures  = "${config.home.homeDirectory}/userdata/pictures";
+    videos    = "${config.home.homeDirectory}/userdata/videos";
+    templates = "${config.home.homeDirectory}/userdata/templates";
+    publicShare = "${config.home.homeDirectory}/userdata/public";
+    music     = "${config.home.homeDirectory}/userdata/music";
   };
   
 }
