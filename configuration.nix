@@ -173,9 +173,6 @@
       };
       "Groups/0/Items/0".Name = "rime";
     };
-    fcitx5.settings.globalOptions = {
-      "Behavior".DefaultPageSize=10;
-    };
   };
 
   

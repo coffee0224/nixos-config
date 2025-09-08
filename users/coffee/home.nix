@@ -17,13 +17,15 @@
       devbox
       nix-output-monitor
       snipaste
-
+      microsoft-edge
+      
       # studying
       obsidian
       zotero
     
       #editor
       helix
+      heynote
       (vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions; [
         bbenoist.nix
@@ -32,7 +34,7 @@
         ms-vscode-remote.remote-ssh-edit
         ];
       })
-      
+            
       # archives
       unzip
       zip
@@ -85,17 +87,14 @@
     userEmail = "hyiz0224@gmail.com";
   };
 
-  # personalize
-  xdg = {
-    userDirs = {
-      enable = true;
-      documents = null;
-      download = null;
-      pictures = null;
-      videos = null;
-      templates = null;
-      publicShare = null;
-      music = null;
-    };
+
+  # autostart
+  xdg.autostart = {
+    enable = true;
+    entries = [
+      "${pkgs.heynote}/share/applications/heynote.desktop"
+      "${pkgs.snipaste}/share/applications/Snipaste.desktop"
+    ];   
   };
+
 }
