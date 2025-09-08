@@ -1,0 +1,32 @@
+format = """
+[$os]()$all$character"""
+
+[character]
+success_symbol = '[❯](bold green) '
+error_symbol = '[✗](bold red) '
+
+[git_status]
+style = "#d8712c"
+format = "(\b[ ](fg:#d3869b)$conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind)"
+conflicted = "[ ](bold fg:88 )[  ${count} ](fg:#d3869b)"
+staged = "[ $count ](fg:#d3869b )"
+modified = "[ ${count} ](fg:#d3869b)"
+renamed = "[ ${count} ](fg:#d3869b)"
+deleted = "[ ${count} ](fg:#d3869b)"
+untracked = "[?${count} ](fg:#d3869b)"
+stashed = "[ ${count} ](fg:#d3869b)"
+ahead = "[ ${count} ](fg:#523333)"
+behind = "[ ${count} ](fg:#d3869b)"
+diverged = "[ ](fg:88 )[ נּ ](fg:#d3869b )[ ${ahead_count} ](fg:#d3869b )[ ${behind_count} ](fg:#d3869b )"
+
+[scala]
+disabled = true
+
+[os]
+disabled = false
+
+[os.symbols]
+Windows = " "
+openSUSE = "  "
+Ubuntu = " "
+NixOS = "󱄅 "

@@ -18,7 +18,9 @@
       nix-output-monitor
       snipaste
       microsoft-edge
-      
+      direnv
+      bash-env-json
+                  
       # studying
       obsidian
       zotero
@@ -56,9 +58,16 @@
       source = pkgs.callPackage ./rime-config.nix {};      
       recursive = true;             
     };
+
+    file.".config/nushell/" = {
+      source = pkgs.callPackage ./nushell-config.nix {};
+      recursive = true;
+    };
   };
 
   programs = {
+    home-manager.enable = true;
+    
     alacritty = {
       enable = true;
       settings = {
@@ -73,23 +82,40 @@
       };
       theme = "tokyo_night";
     };
-  };
+    
+    git = {
+      enable = true;
+      userName = "coffee";
+      userEmail = "hyiz0224@gmail.com";
+    };
+    
+    gitui = {
+  	  enable = true;
+      theme = ''
+        (
+          selected_tab: White,
+        )
+      '';
+    };
 
-  programs.plasma.configFile."kwinrc".Wayland = {
-    "InputMethod" = {
-      shellExpand = true;
-      value = "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
+    tealdeer = {
+    	enable = true;
+      settings.updates.auto_update = true;
+    };
+
+    starship = {
+  	  enable = true;
+  	  enableBashIntegration = false;
+  	  enableNushellIntegration = true;
+    };
+
+    zoxide = {
+  	  enable = true;
+  	  enableBashIntegration = false;
+ 	    enableNushellIntegration = true;
     };
   };
 
-
-  programs.home-manager.enable = true;
-  
-  programs.git = {
-    enable = true;
-    userName = "coffee";
-    userEmail = "hyiz0224@gmail.com";
-  };
 
 
   # autostart
