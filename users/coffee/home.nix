@@ -9,6 +9,7 @@
       fd
       ripgrep
       tealdeer
+      starship
       zoxide
       fzf
       bat
@@ -63,6 +64,9 @@
       source = pkgs.callPackage ./nushell-config.nix {};
       recursive = true;
     };
+    file.".config/starship/starship.toml" = {
+      source = ./starship.toml;
+    };
   };
 
   programs = {
@@ -101,18 +105,6 @@
     tealdeer = {
     	enable = true;
       settings.updates.auto_update = true;
-    };
-
-    starship = {
-  	  enable = true;
-  	  enableBashIntegration = false;
-  	  enableNushellIntegration = true;
-    };
-
-    zoxide = {
-  	  enable = true;
-  	  enableBashIntegration = false;
- 	    enableNushellIntegration = true;
     };
   };
 
