@@ -154,6 +154,20 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      librime = (prev.librime.override {
+        plugins = [
+            pkgs.librime-lua
+            pkgs.librime-octagram
+        ];
+      }).overrideAttrs (old: {
+        buildInputs = (old.buildInputs or []) ++ [pkgs.luajit]; # use luajit
+       #buildInputs = (old.buildInputs or []) ++ [pkgs.lua5_4]; # use lua5.4
+      });
+    })
+  ];
+
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;

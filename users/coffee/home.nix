@@ -51,8 +51,12 @@
     sessionVariables = {
       EDITOR = "helix";
     };
-  };
 
+    file.".local/share/fcitx5/rime/" = {
+      source = pkgs.callPackage ./rime-config.nix {};      
+      recursive = true;             
+    };
+  };
 
   programs = {
     alacritty = {
