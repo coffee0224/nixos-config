@@ -239,7 +239,7 @@
         };
       };
   };
-    
+  
   # vpn and network
   networking.firewall.enable = false;
   services.mihomo.tunMode = true;

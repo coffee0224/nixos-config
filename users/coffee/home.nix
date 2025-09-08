@@ -1,4 +1,8 @@
 { pkgs, username, ... }: {
+  imports = [
+    ./xdg-config.nix
+  ];
+  
   home = {
     inherit username;
     homeDirectory = "/home/${username}";
@@ -107,16 +111,4 @@
       settings.updates.auto_update = true;
     };
   };
-
-
-
-  # autostart
-  xdg.autostart = {
-    enable = true;
-    entries = [
-      "${pkgs.heynote}/share/applications/heynote.desktop"
-      "${pkgs.snipaste}/share/applications/Snipaste.desktop"
-    ];   
-  };
-
 }
