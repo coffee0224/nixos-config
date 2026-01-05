@@ -16,14 +16,15 @@
   nixosConfigurations = {
       nixos = let
         username = "coffee";
-        specialArgs = { inherit username; };
+        mylib = import ./mylib/utils.nix { inherit (nixpkgs) lib; };
+        specialArgs = {inherit username mylib inputs;};
+
       in nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         system = "x86_64-linux";
 
         modules = [
           ./hardware
-          ./configuration.nix
           ./users/${username}/nixos.nix
 
           home-manager.nixosModules.home-manager
