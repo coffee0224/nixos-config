@@ -17,7 +17,7 @@
       nixos = let
         username = "coffee";
         mylib = import ./mylib/utils.nix { inherit (nixpkgs) lib; };
-        specialArgs = {inherit username mylib inputs;};
+        specialArgs = {inherit username mylib inputs; };
 
       in nixpkgs.lib.nixosSystem {
         inherit specialArgs;

@@ -1,8 +1,6 @@
 { username, ... }:
 {
   services = {
-    xserver.enable = true;
-
     displayManager = {
       sddm.enable = true;
       autoLogin = {
@@ -12,11 +10,11 @@
     };
 
     desktopManager.plasma6.enable = true;
-    services.xserver.enable = true;
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
+    xserver.enable = true;
+    # xserver.xkb = {
+    #   layout = "us";
+    #   variant = "";
+    # };
 
     pipewire = {
         enable = true;
@@ -35,7 +33,7 @@
     mihomo.tunMode = true;
 
     # key bingding
-    services.keyd = {
+    keyd = {
         enable = true;
         keyboards = {
           default = {
@@ -53,5 +51,5 @@
           };
         };
     };
-  }
+  };
 }

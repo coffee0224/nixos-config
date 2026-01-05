@@ -6,7 +6,11 @@
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
+
   ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
     # blue tooth
   hardware.bluetooth = {
@@ -30,4 +34,6 @@
       };
     };
   };
+
+  system.stateVersion = "25.05";
 }

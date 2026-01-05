@@ -97,7 +97,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [ "nix-command" "flakes" "pipe-operators" ];
     substituters = [
       # cache mirror located in China
       # status: https://mirror.sjtu.edu.cn/
