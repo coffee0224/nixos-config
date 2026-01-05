@@ -1,5 +1,6 @@
 { pkgs, username, ... }: {
   imports = [
+    ../../home
     ./xdg-config.nix
   ];
   
