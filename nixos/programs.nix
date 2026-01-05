@@ -3,6 +3,7 @@
   # vpn
   programs.clash-verge = {
     enable = true;
+    autoStart = true;
   };
 
   # niri
