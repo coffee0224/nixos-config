@@ -5,9 +5,9 @@
   ];
   
   home = {
-    inherit username;
-    homeDirectory = "/home/${username}";
-    stateVersion = "25.05";
+    # inherit username;
+    # homeDirectory = "/home/${username}";
+    # stateVersion = "25.05";
 
     packages = with pkgs; [
       # tool
@@ -75,7 +75,7 @@
   };
 
   programs = {
-    home-manager.enable = true;
+    # home-manager.enable = true;
     
     alacritty = {
       enable = true;
