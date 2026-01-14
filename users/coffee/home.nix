@@ -1,6 +1,7 @@
 { pkgs, username, ... }: {
   imports = [
     ../../home
+    ../../config
   ];
   
   home = {
@@ -17,9 +18,9 @@
       source = pkgs.callPackage ./nushell-config.nix {};
       recursive = true;
     };
-    file.".config/starship/starship.toml" = {
-      source = ../config/starship.toml;
-    };
+    # file.".config/starship/starship.toml" = {
+    #   source = ../config/starship.toml;
+    # };
   };
 
   programs = {
