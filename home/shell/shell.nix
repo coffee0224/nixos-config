@@ -32,7 +32,7 @@
   ];
 
   programs = {
-        gitui = {
+    gitui = {
   	  enable = true;
       theme = ''
         (
