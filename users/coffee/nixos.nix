@@ -9,4 +9,9 @@
   imports = [
     ../../nixos
   ];
+
+  home.file.".local/share/fcitx5/rime/" = {
+      source = pkgs.callPackage ../config/rime-config.nix {};      
+      recursive = true;
+  };
 }
