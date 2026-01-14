@@ -1,60 +1,48 @@
 { pkgs, username, ... }: {
   imports = [
     ../../home
-    ./xdg-config.nix
   ];
   
   home = {
-    # inherit username;
-    # homeDirectory = "/home/${username}";
-    # stateVersion = "25.05";
-
-    packages = with pkgs; [
-      # tool
-      fd
-      ripgrep
-      tealdeer
-      starship
-      zoxide
-      fzf
-      bat
-      gitui
-      bottom
-      devbox
-      nix-output-monitor
-      snipaste
-      microsoft-edge
-      direnv
-      bash-env-json
+    # packages = with pkgs; [
+    #   # tool
+    #   fd
+    #   ripgrep
+    #   tealdeer
+    #   starship
+    #   zoxide
+    #   fzf
+    #   bat
+    #   gitui
+    #   bottom
+    #   devbox
+    #   nix-output-monitor
+    #   direnv
+    #   bash-env-json
                   
-      # studying
-      obsidian
-      zotero
+    #   # studying
+    #   microsoft-edge
+    #   snipaste
+    #   obsidian
+    #   zotero
+    #   wechat
     
-      #editor
-      helix
-      heynote
-      (vscode-with-extensions.override {
-        vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
-        mkhl.direnv
-        ms-vscode-remote.remote-ssh
-        ms-vscode-remote.remote-ssh-edit
-        ];
-      })
-            
-      # archives
-      unzip
-      zip
-      
-      # network
-      wget
-      curl
+    #   #editor
+    #   helix
+    #   heynote
 
-      # chat
-      wechat
+            
+    #   # archives
+    #   unzip
+    #   zip
       
-    ];
+    #   # network
+    #   wget
+    #   curl
+
+    #   # chat
+      
+    # ];
 
     sessionVariables = {
       EDITOR = "helix";
@@ -75,23 +63,6 @@
   };
 
   programs = {
-    # home-manager.enable = true;
-    
-    alacritty = {
-      enable = true;
-      settings = {
-        window = {
-          decorations = "Full";
-          opacity = 0.8;
-        };
-        font.normal = {
-          family = "FiraCode Nerd Font";
-          style = "Regular";
-        };
-      };
-      theme = "tokyo_night";
-    };
-    
     git = {
       enable = true;
       userName = "coffee";
@@ -99,20 +70,6 @@
       extraConfig = {
         core.editor = "hx";
       };
-    };
-    
-    gitui = {
-  	  enable = true;
-      theme = ''
-        (
-          selected_tab: White,
-        )
-      '';
-    };
-
-    tealdeer = {
-    	enable = true;
-      settings.updates.auto_update = true;
     };
   };
 }
