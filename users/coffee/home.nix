@@ -4,46 +4,6 @@
   ];
   
   home = {
-    # packages = with pkgs; [
-    #   # tool
-    #   fd
-    #   ripgrep
-    #   tealdeer
-    #   starship
-    #   zoxide
-    #   fzf
-    #   bat
-    #   gitui
-    #   bottom
-    #   devbox
-    #   nix-output-monitor
-    #   direnv
-    #   bash-env-json
-                  
-    #   # studying
-    #   microsoft-edge
-    #   snipaste
-    #   obsidian
-    #   zotero
-    #   wechat
-    
-    #   #editor
-    #   helix
-    #   heynote
-
-            
-    #   # archives
-    #   unzip
-    #   zip
-      
-    #   # network
-    #   wget
-    #   curl
-
-    #   # chat
-      
-    # ];
-
     sessionVariables = {
       EDITOR = "helix";
     };
@@ -58,7 +18,7 @@
       recursive = true;
     };
     file.".config/starship/starship.toml" = {
-      source = ./starship.toml;
+      source = ../config/starship.toml;
     };
   };
 
