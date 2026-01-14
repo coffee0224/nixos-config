@@ -18,9 +18,11 @@
   programs = {
     git = {
       enable = true;
-      userName = "coffee";
-      userEmail = "hyiz0224@gmail.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "coffee";
+          email = "hyiz0224@gmail.com";
+        };
         core.editor = "hx";
       };
     };
