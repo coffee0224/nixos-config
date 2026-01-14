@@ -14,10 +14,10 @@
       recursive = true;             
     };
 
-    file.".config/nushell/" = {
-      source = pkgs.callPackage ./nushell-config.nix {};
-      recursive = true;
-    };
+    # file.".config/nushell/" = {
+    #   source = pkgs.callPackage ./nushell-config.nix {};
+    #   recursive = true;
+    # };
   };
 
   programs = {
